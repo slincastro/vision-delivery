@@ -1,5 +1,6 @@
 # vision-delivery
 
+[![CircleCI](https://circleci.com/gh/slincastro/covid19-data-aggregator.svg?style=shield)](https://app.circleci.com/pipelines/github/slincastro/vision-delivery)
 
 install Python : 3.7.7
 
