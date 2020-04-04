@@ -3,7 +3,16 @@ version: 2.1
 orbs:
   heroku: circleci/heroku@1.0.1
   slack: circleci/slack@0.1.0
-
+jobs:
+  # more jobs here...
+  alert_me:
+    docker:
+      - image: circleci/node
+    # https://github.com/CircleCI-Public/slack-orb
+    steps:
+      - slack/status:
+        fail_only: "true"
+        webhook: https://hooks.slack.com/services/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
 workflows:
   heroku_deploy:
     jobs:
@@ -12,11 +21,13 @@ workflows:
           branches:
             only: master
   notify_me:
-    jobs:
-      - slack/status:
-          fail_only: true
-          webhook: https://hooks.slack.com/services/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
-      - slack/notify:
-          color: '#42e2f4'
-          message: This is a custom message notification
-          webhook: https://hooks.slack.com/services/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
+    requires:
+      - heroku_deploy
+    #jobs:
+     # - slack/status:
+      #    fail_only: true
+       #   webhook: https://hooks.slack.com/services/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
+      #- slack/notify:
+       #   color: '#42e2f4'
+       #   message: This is a custom message notification
+       #   webhook: https://hooks.slack.com/services/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
