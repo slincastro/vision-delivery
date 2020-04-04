@@ -7,11 +7,13 @@ orbs:
 workflows:
   heroku_deploy:
     jobs:
-        - heroku/deploy-via-git:
-          filters:
-            branches:
-              only: master
-        - slack/notify:
-            color: '#42e2f4'
-            message: This is a custom message notification
-            webhook: https://hooks.slack.com/services/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
+      - heroku/deploy-via-git:
+        filters:
+          branches:
+            only: master
+  notify_me:
+    jobs:
+      - slack/approval-notification:
+          color: '#42e2f4'
+          message: This is a custom message notification
+          webhook: https://hooks.slack.com/services/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
