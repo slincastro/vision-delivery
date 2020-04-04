@@ -11,6 +11,9 @@ workflows:
           filters:
             branches:
               only: master
+  publish_message:
+    jobs:
+      steps:
         - slack/notify:
             channel: CHANNELID
             color: '#42e2f4'
