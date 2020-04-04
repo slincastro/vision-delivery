@@ -12,6 +12,12 @@ def load_data():
     return 'OK'
 
 
+@app.route('/orders')
+def orders():
+
+    return 'orders will coming !'
+
+
 if __name__ == '__main__':
     port = os.environ["PORT"]
     print('using port : ', port)
