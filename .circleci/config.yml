@@ -10,3 +10,9 @@ workflows:
         filters:
           branches:
             only: master
+      steps:
+        - slack/notify:
+            channel: CHANNELID
+            color: '#42e2f4'
+            message: This is a custom message notification
+            webhook: https://hooks.slack.com/services/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
