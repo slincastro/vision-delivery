@@ -11,8 +11,7 @@ workflows:
           filters:
             branches:
               only: master
-  publish_message:
-    jobs:
+    steps:
         - slack/notify:
             color: '#42e2f4'
             message: This is a custom message notification
