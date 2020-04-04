@@ -6,11 +6,11 @@ orbs:
 workflows:
   heroku_deploy:
     jobs:
-      - heroku/deploy-via-git:
-        filters:
-          branches:
-            only: master
       steps:
+        - heroku/deploy-via-git:
+          filters:
+            branches:
+              only: master
         - slack/notify:
             channel: CHANNELID
             color: '#42e2f4'
