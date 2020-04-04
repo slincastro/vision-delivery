@@ -7,7 +7,6 @@ orbs:
 workflows:
   heroku_deploy:
     jobs:
-      steps:
         - heroku/deploy-via-git:
           filters:
             branches:
