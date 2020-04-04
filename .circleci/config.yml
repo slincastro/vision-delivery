@@ -3,6 +3,7 @@ version: 2.1
 orbs:
   heroku: circleci/heroku@1.0.1
   slack: circleci/slack@0.1.0
+
 jobs:
   # more jobs here...
   alert_me:
@@ -20,9 +21,9 @@ workflows:
         filters:
           branches:
             only: master
-  notify_me:
-    requires:
-      - heroku_deploy
+  #    - notify_me:
+  #  requires:
+ #     - heroku_deploy
     #jobs:
      # - slack/status:
       #    fail_only: true
